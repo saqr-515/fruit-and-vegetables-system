@@ -1,16 +1,21 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  output: 'export',
-    images: {
-        unoptimized: true,
-          },
-            typescript: {
-                ignoreBuildErrors: true,
-                  },
-                    eslint: {
-                        ignoreDuringBuilds: true,
-                          }
-                          };
-                          
-                          export default nextConfig;
-                  
+import type { NextConfig } from "next";
+
+const nextConfig: NextConfig = {
+  /* تعطيل ESLint و Typescript لضمان استمرارية التشغيل */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  /* حل مشكلة التنسيق والخطوط على بعض نسخ ويندوز */
+  images: {
+    unoptimized: true,
+  },
+  experimental: {
+    // تعطيل الميزات التي قد تتطلب lightningcss native bindings
+    optimizeCss: false, 
+  }
+};
+
+export default nextConfig;

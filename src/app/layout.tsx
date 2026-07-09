@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Link from "next/link";
-import { LayoutDashboard, ShoppingCart, BookOpen, Wallet, Package, Zap } from "lucide-react";
+import { LayoutDashboard, ShoppingCart, BookOpen, Wallet, Package, Zap, ShoppingBag } from "lucide-react";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: '--font-inter' });
@@ -36,7 +36,8 @@ export default function RootLayout({
           
           <div className="flex md:flex-col gap-2 w-full">
             <NavLink href="/" icon={<LayoutDashboard className="w-5 h-5" />} label="لوحة التحكم" />
-            <NavLink href="/pos" icon={<ShoppingCart className="w-5 h-5" />} label="نقطة البيع" />
+            <NavLink href="/pos" icon={<ShoppingCart className="w-5 h-5" />} label="فاتورة مبيعات" />
+            <NavLink href="/purchases" icon={<ShoppingBag className="w-5 h-5" />} label="وارد موردين" />
             <NavLink href="/ledger" icon={<BookOpen className="w-5 h-5" />} label="دفتر الحسابات" />
             <NavLink href="/receipts" icon={<Wallet className="w-5 h-5" />} label="سندات القبض" />
             <NavLink href="/inventory" icon={<Package className="w-5 h-5" />} label="المخزن" />
