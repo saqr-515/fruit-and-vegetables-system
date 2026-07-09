@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# نظام صقر لإدارة جملة الخضار والفواكه (Full-Stack) 🍉
 
-## Getting Started
+نظام إداري متطور مبني باستخدام **Next.js 16** للواجهة الأمامية و **Node.js/Express** للخلفية، مع قاعدة بيانات **MongoDB**. تم تصميم النظام ليعمل بشكل مستقل تماماً بعيداً عن قيود Firebase.
 
-First, run the development server:
+## الميزات الرئيسية
+*   **نظام POS متطور:** حساب أوزان (قائم/طارة) مع ربط تلقائي بالمخزن والديون.
+*   **إدارة المخزن:** مراقبة الكميات لحظياً مع تنبيهات النواقص.
+*   **دفتر الحسابات:** سجل كامل للزبائن والموردين مع تاريخ المعاملات.
+*   **سندات القبض:** توثيق المقبوضات النقدية وتحديث الأرصدة فوراً.
+*   **تصميم فاخر:** واجهة Dark Mode احترافية مع تأثيرات Glow و Texture.
 
+## هيكلية المشروع
+*   `/src`: واجهة Next.js الأمامية.
+*   `/backend`: خادم Node.js المستقل وقواعد بيانات MongoDB.
+
+## تعليمات التشغيل (Local Setup)
+
+### 1. تشغيل الباكيند (The Server)
+افتح ترمينال جديد وقم بتنفيذ الآتي:
 ```bash
+cd backend
+npm install
+# قم بتعديل رابط MongoDB في ملف .env
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+سيعمل السيرفر على الرابط: `http://localhost:5000`
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. تشغيل الواجهة الأمامية (The Frontend)
+في ترمينال آخر:
+```bash
+npm install
+npm run dev
+```
+سيعمل الموقع على الرابط: `http://localhost:3000`
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ملاحظات تقنية
+*   تم فصل النظام عن Firebase تماماً.
+*   يعتمد التواصل بين الفرونت والباكيند على `fetch` عبر ملف `src/lib/api.ts`.
+*   تستخدم قاعدة البيانات MongoDB Atlas لضمان مرونة البيانات المالية.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+تطوير: **صقر - نظام إدارة الحسبة الذكي**
